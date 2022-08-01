@@ -2,7 +2,7 @@
 
   <!-- ! Hide app brand if navbar-full -->
   <div class="app-brand demo">
-    <a href="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template-free/demo" class="app-brand-link">
+    <a href="{{ route('admin.dashboard') }}" class="app-brand-link">
       <span class="app-brand-logo demo">
         <svg width="25" viewBox="0 0 25 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <defs>
@@ -37,7 +37,7 @@
   </g>
 </svg>
       </span>
-      <span class="app-brand-text demo menu-text fw-bold ms-2">Sneat</span>
+      <span class="app-brand-text demo menu-text fw-bold ms-2">skippy</span>
     </a>
 
     <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-autod-block d-xl-none">
@@ -54,71 +54,55 @@
     
     
     
+
     
-    
-    <li class="menu-item active">
-      <a href="https://demos.themeselection.com/sneat-bootstrap-html-laravel-admin-template-free/demo" class="menu-link" >
+    <li class="menu-item {{ Route::is('admin.dashboard') ? 'active' : ''}}">
+      <a href="{{ route('admin.dashboard') }}" class="menu-link " >
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div>Dashboard</div>
       </a>
-
-      
-          </li>
+    </li>
         
     
-
-        
     
-
-    
-    
-    
-    
-    
-    <li class="menu-item ">
+    <li class="menu-item {{ Route::is('role.create') || Route::is('role.index') || Route::is('role.edit')  ? 'active' : ''}} {{ Route::is('role.create') || Route::is('role.index') || Route::is('role.edit')  ? 'open' : ''}}">
       <a href="javascript:void(0);" class="menu-link menu-toggle" >
-                <i class="menu-icon tf-icons bx bx bx-dock-top"></i>
-                <div>Pole & Permission</div>
+        <i class="menu-icon tf-icons bx bx bx-dock-top"></i>
+        <div>Pole & Permission</div>
       </a>
-
-      
-    <ul class="menu-sub">
-    
-  
-  
-  <li class="menu-item ">
-    <a href="{{route('role.create')}}" class="menu-link" >
+      <ul class="menu-sub">
+        <li class="menu-item {{ Route::is('role.create') || Route::is('role.store')  ? 'active' : ''}}">
+          <a href="{{route('role.create')}}" class="menu-link" >
             <div>Add Role</div>
-    </a>
-
-    
-      </li>
-  
-  
-  
-  <li class="menu-item ">
-    <a href="{{route('role.index')}}" class="menu-link" >
+          </a>
+        </li>
+        <li class="menu-item {{  Route::is('role.index') || Route::is('role.edit') || Route::is('role.update') || Route::is('role.delete')  ? 'active' : ''}}">
+          <a href="{{route('role.index')}}" class="menu-link" >
             <div>Role Manage</div>
-    </a>
+          </a>
+      </ul>
+    </li>
 
-    
-      </li>
-  
-  
-
-    </ul>
-          </li>
+    <li class="menu-item {{ Route::is('user.create') || Route::is('user.index') || Route::is('user.edit')  ? 'active' : ''}} {{ Route::is('user.create') || Route::is('user.index') || Route::is('user.edit')  ? 'open' : ''}}">
+      <a href="javascript:void(0);" class="menu-link menu-toggle" >
+        <i class="menu-icon tf-icons bx bx bx-dock-top"></i>
+        <div>User Manage</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item {{ Route::is('user.create') || Route::is('user.store')  ? 'active' : ''}}">
+          <a href="{{route('user.create')}}" class="menu-link" >
+            <div>Add User</div>
+          </a>
+        </li>
+        <li class="menu-item {{  Route::is('user.index') || Route::is('user.edit') || Route::is('user.update') || Route::is('user.delete')  ? 'active' : ''}}">
+          <a href="{{route('user.index')}}" class="menu-link" >
+            <div>User Manage</div>
+          </a>
+      </ul>
+    </li>
         
     
 
-    
-    
-    
-    
-    
-
-    
-    
     
     
     

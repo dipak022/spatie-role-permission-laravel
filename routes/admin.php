@@ -7,7 +7,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth:admin']], function(){
      Route::resource('/role', App\Http\Controllers\Role\RolesController::class);
 
      //user Assign role update 
-     Route::resource('/users', App\Http\Controllers\Role\UserController::class);
+     Route::resource('/user', App\Http\Controllers\Role\UserController::class);
 
            
   
